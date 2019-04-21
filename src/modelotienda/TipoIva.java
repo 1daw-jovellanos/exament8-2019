@@ -10,6 +10,5 @@ package modelotienda;
  * @author victor.fernandez
  */
 public enum TipoIva {
-    SUPERREDUCIDO, GENERAL, REDUCIDO
-    
+    SUPERREDUCIDO, GENERAL, REDUCIDO  
 }

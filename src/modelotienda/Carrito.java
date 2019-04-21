@@ -31,12 +31,12 @@ public class Carrito {
             return true;
         }
         int cuentaPerfumes = 0;
-        for (Comprable comprable : compra) {   // Un while con iterador seria una alternativa
+        for (Comprable comprable : compra) {
             if (comprable instanceof Perfume) {
                 cuentaPerfumes++;
-            }
-            if (cuentaPerfumes >= 2) {
-                return true; // paramos cuanto antes
+                if (cuentaPerfumes >= 2) {
+                    return true; // paramos cuanto antes
+                }
             }
         }
         return false;

@@ -1,5 +1,8 @@
 package modelotienda;
 
+/*
+ No está encapsulada. Se puede acceder a sus variables desde otras clases
+*/
 
 public class Seguro implements Comprable {
     public int codigo;

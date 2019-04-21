@@ -3,7 +3,10 @@ package modelotienda;
 public abstract class Articulo implements Comprable {
 
     private String nombre;
-    private int precioBase;
+    /** En céntimos... aunque en realidad, no es relevante salvo para obtener el valor en
+     * euros
+     */
+    private int precioBase; 
     private TipoIva tipoIva;
 
     public Articulo(String nombre, int precioBase, TipoIva tipoIva) {
@@ -41,13 +44,15 @@ public abstract class Articulo implements Comprable {
             default:
                 porcentaje = 0;
         }
-        return precioBase + precioBase * porcentaje / 100;
+        return precioBase + precioBase * porcentaje / 100; // división entera. despreciamos
+        // fracciones de céntimo
     }
     
     public abstract String getDenominacion();
 
     @Override
     public String toString() {
+        // Al dividir por 100, el precio sale en €
         return String.format("%s: %s %.2f€", getDenominacion(), getNombre(), getPrecio() / 100.0);
     }
 
